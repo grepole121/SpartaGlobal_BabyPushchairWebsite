@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Questionnaire</title>
@@ -7,6 +7,114 @@
     <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
 </head>
 <body>
+<form th:action="@{/results}" method="post">
+    <p>Where do you live?</p>
+    <input type="radio" id="Urban" name="location" value="Urban">
+    <label>Urban</label><br>
+    <input type="radio" id="Suburban" name="location" value="Suburban">
+    <label>Suburban</label><br>
+    <input type="radio" id="Countryside" name="location" value="Countryside">
+    <label>Countryside</label><br>
 
+    <br>
+
+    <p>Where will the pushchair be stored most of the time when not in use?</p>
+    <input type="radio" id="In the boot of the car" name="storage" value="In the boot of the car">
+    <label>In the boot of the car</label><br>
+    <input type="radio" id="Left upright inside the home" name="storage" value="Left upright inside the home">
+    <label>Left upright inside the home</label><br>
+    <input type="radio" id="Folded up inside the home" name="storage" value="Folded up inside the home">
+    <label>Folded up inside the home</label><br>
+
+    <br>
+
+    <p>How do you mostly do day to day travel?</p>
+    <input type="radio" id="Personal Car" name="travel" value="Personal Car">
+    <label>Personal Car</label><br>
+    <input type="radio" id="Rental Car" name="travel" value="Rental Car">
+    <label>Rental Car</label><br>
+    <input type="radio" id="Public Transport" name="travel" value="Public Transport">
+    <label>Public Transport</label><br>
+
+    <br>
+
+    <p>What is your budget?</p>
+    <input type="radio" id="0-500" name="budget" value="0-500">
+    <label>£0 - £500</label><br>
+    <input type="radio" id="500-1000" name="budget" value="500-1000">
+    <label>£500 - £1000</label><br>
+    <input type="radio" id="1000-1500" name="budget" value="1000-1500">
+    <label>£1000 - £1500</label><br>
+    <input type="radio" id="1500+" name="budget" value="1500+">
+    <label>£1500+</label><br>
+
+    <br>
+
+    <p>How many infants need to be accommodated?</p>
+    <input type="radio" id="1" name="infants" value="1">
+    <label>1</label><br>
+    <input type="radio" id="2" name="infants" value="2">
+    <label>2</label><br>
+    <input type="radio" id="more than 2" name="infants" value="more than 2">
+    <label>More than 2</label><br>
+
+    <br>
+
+    <p>Accessory Requirements</p>
+    <input type="checkbox" id="Rain cover" name="accessories" value="Rain cover">
+    <label>Rain cover</label><br>
+    <input type="checkbox" id="Mosquito net" name="accessories" value="Mosquito net">
+    <label>Mosquito net</label><br>
+    <input type="checkbox" id="Parasol" name="accessories" value="Parasol">
+    <label>Parasol</label><br>
+    <input type="checkbox" id="Car Adapter" name="accessories" value="Car Adapter">
+    <label>Car Adapter</label><br>
+    <input type="checkbox" id="Changing Bag" name="accessories" value="Changing Bag">
+    <label>Changing Bag</label><br>
+
+    <br>
+
+    <p>Which focal points are important?</p>
+    <input type="checkbox" id="Use from birth" name="focalPoints" value="Use from birth">
+    <label>Use from birth</label><br>
+    <input type="checkbox" id="Adaptable over child's growth" name="focalPoints" value="Adaptable over child's growth">
+    <label>Adaptable over child's growth</label><br>
+    <input type="checkbox" id="Comfort" name="focalPoints" value="Comfort">
+    <label>Comfort</label><br>
+    <input type="checkbox" id="Sturdiness / Durability" name="focalPoints" value="Sturdiness / Durability">
+    <label>Sturdiness / Durability</label><br>
+    <input type="checkbox" id="Ease of setup" name="focalPoints" value="Ease of setup">
+    <label>Ease of setup</label><br>
+    <input type="checkbox" id="Compact" name="focalPoints" value="Compact">
+    <label>Compact</label><br>
+    <input type="checkbox" id="Capacity" name="focalPoints" value="Capacity">
+    <label>Capacity</label><br>
+
+    <br>
+
+    <p>International travel: Would you prefer to check it in or put it in the cabin?</p>
+    <input type="radio" id="Cabin (<7kg)" name="intTravel" value="Cabin (<7kg)">
+    <label>Cabin (<7kg)</label><br>
+    <input type="radio" id="Check-in (any weight)" name="intTravel" value="Check-in (any weight)">
+    <label>Check-in (any weight)</label><br>
+    <input type="radio" id="No preference" name="intTravel" value="no preference">
+    <label>No preference</label><br>
+
+    <br>
+
+    <p>How active will be with your pram?</p>
+    <input type="radio" id="Mostly just running errands" name="activity" value="Mostly just running errands">
+    <label>Mostly just running errands</label><br>
+    <input type="radio" id="Going on neighbourhood walks" name="activity" value="Going on neighbourhood walks">
+    <label>Going on neighbourhood walks</label><br>
+    <input type="radio" id="Trail walking and exploring" name="activity" value="Trail walking and exploring">
+    <label>Trail walking and exploring</label><br>
+    <input type="radio" id="Running with my stroller" name="activity" value="Running with my stroller">
+    <label>Running with my stroller</label><br>
+
+    <br>
+
+    <input type="submit" value="submit">
+</form>
 </body>
 </html>
