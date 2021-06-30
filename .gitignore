@@ -67,3 +67,5 @@ out/
 *.iml
 *.ipr
 *.iws
+
+src/main/resources/application.properties
