@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Pram</title>
+</head>
+<body>
+<h1>Add a Pram</h1>
+<form action="/add" method="post">
+    <label>Pram Name</label>
+    <label><input type="text" name="productName"/></label>
+    <br>
+    <label>Brand Name</label>
+    <label><input type="text" name="brandName"></label>
+    <br>
+    <label>Image URL</label>
+    <label><input type="text" name="image"></label>
+    <br>
+    <label>Description</label>
+    <label><input type="text" name="description"></label>
+    <br>
+    <label>Child Capacity</label>
+    <label><input type="number" min="1" name="childCapacity"></label>
+    <br>
+    <label>Weight</label>
+    <label><input type="text" name="weight"></label>
+    <br>
+    <label>Folded dimensions</label>
+    <label><input type="text" name="foldedDimensions"></label>
+    <br>
+    <label>Age from months</label>
+    <label><input type="number" min="0" name="ageFromMonths"></label>
+    <br>
+    <label>Age to months</label>
+    <label><input type="number" name="ageToMonths"></label>
+    <br>
+    <label>Expert Score</label>
+    <label><input type="number" step="0.1" name="expertScore"></label>
+    <br>
+    <label>Rain cover available</label>
+    <input type="radio" name="raincoverFlag" value="yes">
+    <label>yes</label>
+    <input type="radio" name="raincoverFlag" value="no">
+    <label>no</label>
+    <br>
+    <label>Change bag available</label>
+    <input type="radio" name="changebagFlag" value="yes">
+    <label>yes</label>
+    <input type="radio" name="changebagFlag" value="no">
+    <label>no</label>
+    <br>
+    <label>Parasol available</label>
+    <input type="radio" name="parasolFlag" value="yes">
+    <label>yes</label>
+    <input type="radio" name="parasolFlag" value="no">
+    <label>no</label>
+    <br>
+    <label>Rain cover available</label>
+    <input type="radio" name="raincoverFlag" value="yes">
+    <label>yes</label>
+    <input type="radio" name="raincoverFlag" value="no">
+    <label>no</label>
+    <br>
+    <label>Mosquito net available</label>
+    <input type="radio" name="mosquitonetFlag" value="yes">
+    <label>yes</label>
+    <input type="radio" name="mosquitonetFlag" value="no">
+    <label>no</label>
+    <br>
+    <label>Car adapter available</label>
+    <input type="radio" name="carAdapterFlag" value="yes">
+    <label>yes</label>
+    <input type="radio" name="carAdapterFlag" value="no">
+    <label>no</label>
+    <br>
+    <label>Ease of setup</label>
+    <input type="radio" name="easeOfSetup" value="yes">
+    <label>Easy</label>
+    <input type="radio" name="easeOfSetup" value="no">
+    <label>Not easy</label>
+    <input type="radio" name="easeOfSetup" value="null">
+    <label>Not applicable</label>
+    <br>
+    <label>Reversible seat available</label>
+    <input type="radio" name="reversibleSeatFlag" value="yes">
+    <label>yes</label>
+    <input type="radio" name="reversibleSeatFlag" value="no">
+    <label>no</label>
+    <br>
+    <label>Is sturdy</label>
+    <input type="radio" name="SturdyFlag" value="yes">
+    <label>yes</label>
+    <input type="radio" name="sturdyFlag" value="no">
+    <label>no</label>
+    <br>
+    <label>Is compact</label>
+    <input type="radio" name="compactFlag" value="yes">
+    <label>yes</label>
+    <input type="radio" name="compactFlag" value="no">
+    <label>no</label>
+    <br>
+    <label>Can be used on all terrain</label>
+    <input type="radio" name="multiTerrainFlag" value="yes">
+    <label>yes</label>
+    <input type="radio" name="multiTerrainFlag" value="no">
+    <label>no</label>
+    <br>
+    <label>Adjustable handle available</label>
+    <input type="radio" name="adjustableHandleFlag" value="yes">
+    <label>yes</label>
+    <input type="radio" name="adjustableHandleFlag" value="no">
+    <label>no</label>
+    <br>
+    <label>Large pram basket available</label>
+    <input type="radio" name="largePramBasketFlag" value="yes">
+    <label>yes</label>
+    <input type="radio" name="largePramBasketFlag" value="no">
+    <label>no</label>
+    <br>
+    <label>Cheapest price</label>
+    <label><input type="number" name="cheapestPrice"></label>
+    <br>
+    <input type="submit" value="Add pram">
+</form>
+</body>
+</html>
