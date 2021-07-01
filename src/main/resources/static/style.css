@@ -124,5 +124,23 @@
     background-color: dodgerblue;
 }
 
+.search-result .title h3 {
+    color: black;
+}
+.search-result .title p {
+    color: black;
+}
+.well {
+    border: 0;
+    padding: 20px;
+    min-height: 63px;
+    background: #fff;
+    box-shadow: none;
+    border-radius: 3px;
+    position: relative;
+    max-height: 100000px;
+    border-bottom: 2px solid #ccc;
+}
+
 
 

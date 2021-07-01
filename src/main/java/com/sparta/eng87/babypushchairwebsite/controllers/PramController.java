@@ -30,26 +30,33 @@ public class PramController {
         return "questionnaire";
     }
 
-    @GetMapping("/productPage/{id}")
-    public String getProduct(@PathVariable("id") Integer id, Model model) {
-        model.addAttribute("product", /* find product by id from service*/);
-        return "productpage/{id}";
+    @GetMapping("/results")
+    public String getResults(){
+            return "results";
     }
 
-    @PostMapping("/results")
-    public String getPrams(@RequestParam(name = "location") String location,
-                           @RequestParam(name = "storage") String storage,
-                           @RequestParam(name = "travel") String travel,
-                           @RequestParam(name = "budget") String budget,
-                           @RequestParam(name = "infants") String infants,
-                           @RequestParam(name = "accessories") String accessories,
-                           @RequestParam(name = "focalPoints") String focalPoints,
-                           @RequestParam(name = "intTravel") String intTravel,
-                           @RequestParam(name = "activity") String activity,
-                           Model model) {
-        model.addAttribute("prams", /* get prams that meet the criteria */);
-        return "/results";
-    }
+
+//    @GetMapping("/productPage/{id}")
+//    public String getProduct(@PathVariable("id") Integer id, Model model) {
+//        model.addAttribute("product",/* find product by id from service*/);
+//        return "productpage/{id}";
+//    }
+
+
+//    @PostMapping("/results")
+//    public String getPrams(@RequestParam(name = "location") String location,
+//                           @RequestParam(name = "storage") String storage,
+//                           @RequestParam(name = "travel") String travel,
+//                           @RequestParam(name = "budget") String budget,
+//                           @RequestParam(name = "infants") String infants,
+//                           @RequestParam(name = "accessories") String accessories,
+//                           @RequestParam(name = "focalPoints") String focalPoints,
+//                           @RequestParam(name = "intTravel") String intTravel,
+//                           @RequestParam(name = "activity") String activity,
+//                           Model model) {
+//        model.addAttribute("prams",/* get prams that meet the criteria */);
+//        return "/results";
+//    }
 
 
 }
