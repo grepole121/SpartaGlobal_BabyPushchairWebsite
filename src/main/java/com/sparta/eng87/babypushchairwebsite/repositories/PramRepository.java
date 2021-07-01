@@ -10,6 +10,7 @@ import java.util.List;
 @Repository
 public interface PramRepository extends JpaRepository<PramEntity, Integer>{
 
+    String variable = "SELECT p.* FROM pramstable p";
 //    ReversableSeatFlag, , ,, AdjustableHandleFlag  --------- Not asked in questionnaire?
 
 //    @Query(value = "SELECT p.* FROM pramstable p WHERE p.discontinued_flag!=1 " +
@@ -31,7 +32,7 @@ public interface PramRepository extends JpaRepository<PramEntity, Integer>{
 //            "AND p.Weight < ?18"
 //            , nativeQuery = true)
 
-    @Query(value = "SELECT p.* FROM pramstable p", nativeQuery = true)
+    @Query(value = variable, nativeQuery = true)
 
     List<PramEntity> findPramsThatMeetCriteria(int MultiTerrainFlag, //Where do you live? & Activity BIT
                                         int CompactFlag, // Where stored? & focal point BIT
