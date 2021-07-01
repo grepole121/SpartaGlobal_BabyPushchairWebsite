@@ -39,6 +39,7 @@ public class PramService {
         int ParasolFlag = 0; // Accessory BIT
         int ChangebagFlag = 0; // Accessory BIT
 
+
         for (String accessory : accessories) {
             switch (accessory) {
                 case "Rain cover":
@@ -54,6 +55,7 @@ public class PramService {
             }
         }
 
+
         int EaseOfSetup = 0; // Where stored? & Focal Points BIT
 
         if (storage.equals("Folded up inside the home")) {
@@ -65,6 +67,7 @@ public class PramService {
         int ComfortFlag = 0; // Focal Points BIT
         int SturdyFlag = 0; // Focal Points BIT
         int LargePramBasketFlag = 0; // Focal Points BIT
+
 
         for (String focalPoint : focalPoints) {
             switch (focalPoint) {
@@ -92,18 +95,6 @@ public class PramService {
             }
         }
 
-        int multiNeeded = 1;
-        int compactNeeded = 1;
-        int carAdapterNeeded = 1;
-        int raincoverNeeded = 1;
-        int moquitonetNeeded = 1;
-        int parasolNeeded = 1;
-        int changebagNeeded = 1;
-        int comfortNeeded = 1;
-        int sturdyNeeded = 1;
-        int easeNeeded = 1;
-        int largeNeeded = 1;
-
         return pramRepository.findPramsThatMeetCriteria(MultiTerrainFlag, CompactFlag, CarAdapterFlag,
                 budgets[0], budgets[1], infantRange[0], infantRange[1], RaincoverFlag, MosquitonetFlag, ParasolFlag, ChangebagFlag,
                 AgeFromMonths, AgeToMonths, ComfortFlag, SturdyFlag, EaseOfSetup, LargePramBasketFlag, WeightMax);
@@ -125,6 +116,10 @@ public class PramService {
             case "more than 2":
                 infantsLow = 3;
                 infantsHigh = 1500;
+                break;
+            default:
+                infantsLow = 0;
+                infantsHigh = 1000;
                 break;
         }
         int[] infantRange = new int[]{infantsLow, infantsHigh};
@@ -151,6 +146,10 @@ public class PramService {
                 break;
             case "1500+":
                 budgetLow = 1500;
+                budgetHigh = 1000000000;
+                break;
+            default:
+                budgetLow = 0;
                 budgetHigh = 1000000000;
                 break;
         }
