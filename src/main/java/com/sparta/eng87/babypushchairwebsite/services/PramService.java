@@ -85,7 +85,17 @@ public class PramService {
             }
         }
 
-
+        int multiNeeded = 1;
+        int compactNeeded = 1;
+        int carAdapterNeeded = 1;
+        int raincoverNeeded = 1;
+        int moquitonetNeeded = 1;
+        int parasolNeeded = 1;
+        int changebagNeeded = 1;
+        int comfortNeeded = 1;
+        int sturdyNeeded = 1;
+        int easeNeeded = 1;
+        int largeNeeded = 1;
 
         return pramRepository.findPramsThatMeetCriteria(MultiTerrainFlag, CompactFlag, CarAdapterFlag,
                 budgets[0], budgets[1], infantRange[0], infantRange[1], RaincoverFlag, MosquitonetFlag, ParasolFlag, ChangebagFlag,
