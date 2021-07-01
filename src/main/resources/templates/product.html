@@ -15,7 +15,7 @@
     <li>Width: <span th:text="${pram.width}">Width</span></li>
     <li>Age from months: <span th:text="${pram.ageFromMonths}">Age from months</span></li>
     <li>Age to months: <span th:text="${pram.ageToMonths}">Age to months</span></li>
-    <li>Expert Score: <span th:text="${pram.expertScpre}">Expert score</span></li>
+    <li>Expert Score: <span th:text="${pram.expertScore}">Expert score</span></li>
     <li>Rain cover available: <span th:if="${pram.raincoverFlag == 1}" th:text="Yes">Raincover flag</span>
                               <span th:unless="${pram.raincoverFlag == 1}" th:text="No">Raincover flag</span>
     </li>
@@ -29,7 +29,7 @@
     </li>
 
     <li>Mosquito Net Available: <span th:if="${pram.mosquitonetFlag} == 1" th:text="Yes">Mosquitonet Flag</span>
-                                <span th:unless="${pram.reversibleSeatFlag} == 1" th:text="No">Mosquitonet Flag</span>
+                                <span th:unless="${pram.mosquitonetFlag} == 1" th:text="No">Mosquitonet Flag</span>
     </li>
 
     <li>Has a car adapter: <span th:if="${pram.carAdapterFlag} == 1" th:text="Yes">Car Adapter Flag</span>
@@ -40,8 +40,8 @@
                         <span th:unless="${pram.easeOfSetup} == 1" th:text="No">Ease of Setup</span>
     </li>
 
-    <li>Has a reversible seat: <span th:if="${pram.reversibleSeatFlag} == 1" th:text="Yes">Reversible Seat Flag</span>
-                                <span th:unless="${pram.reversibleSeatFlag} == 1" th:text="No">Reversible Seat Flag</span>
+    <li>Has a reversible seat: <span th:if="${pram.reversableSeatFlag} == 1" th:text="Yes">Reversible Seat Flag</span>
+                                <span th:unless="${pram.reversableSeatFlag} == 1" th:text="No">Reversible Seat Flag</span>
     </li>
 
     <li>Is sturdy: <span th:if="${pram.sturdyFlag} == 1" th:text="Yes">Sturdy Flag</span>
