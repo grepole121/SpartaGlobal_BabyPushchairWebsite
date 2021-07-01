@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+</head>
+<body>
+
+<h1 th:text="${pram.productName}">Product Name</h1>
+<img th:src="${pram.image}">
+<p th:text="${pram.productDescription}"></p>
+<ul>
+    <li>Child capacity: <span th:text="${pram.childCapacity}">child capacity</span></li>
+    <li>Weight: <span th:text="${pram.weight}">weight</span></li>
+    <li>Width: <span th:text="${pram.width}">Width</span></li>
+    <li>Age from months: <span th:text="${pram.ageFromMonths}">Age from months</span></li>
+    <li>Age to months: <span th:text="${pram.ageToMonths}">Age to months</span></li>
+    <li>Expert Score: <span th:text="${pram.expertScpre}">Expert score</span></li>
+    <li>Rain cover available: <span th:if="${pram.raincoverFlag == 1}" th:text="Yes">Raincover flag</span>
+                              <span th:unless="${pram.raincoverFlag == 1}" th:text="No">Raincover flag</span>
+    </li>
+
+    <li>Changing bag available: <span th:if="${pram.changebagFlag == 1}" th:text="Yes">Change bag flag</span>
+                                <span th:unless="${pram.changebagFlag == 1}" th:text="No">Change bag fag</span>
+    </li>
+
+    <li>Parasol available: <span th:if="${pram.parasolFlag == 1}" th:text="Yes">Parasol flag</span>
+                           <span th:unless="${pram.parasolFlag == 1}" th:text="No">Parasol flag</span>
+    </li>
+
+    <li>Mosquito Net Available: <span th:if="${pram.mosquitonetFlag} == 1" th:text="Yes">Mosquitonet Flag</span>
+                                <span th:unless="${pram.reversibleSeatFlag} == 1" th:text="No">Mosquitonet Flag</span>
+    </li>
+
+    <li>Has a car adapter: <span th:if="${pram.carAdapterFlag} == 1" th:text="Yes">Car Adapter Flag</span>
+                                <span th:unless="${pram.carAdapterFlag} == 1" th:text="No">Car Adapter Flag</span>
+    </li>
+
+    <li>Easy to setup: <span th:if="${pram.easeOfSetup} == 1" th:text="Yes">Ease of Setup</span>
+                        <span th:unless="${pram.easeOfSetup} == 1" th:text="No">Ease of Setup</span>
+    </li>
+
+    <li>Has a reversible seat: <span th:if="${pram.reversibleSeatFlag} == 1" th:text="Yes">Reversible Seat Flag</span>
+                                <span th:unless="${pram.reversibleSeatFlag} == 1" th:text="No">Reversible Seat Flag</span>
+    </li>
+
+    <li>Is sturdy: <span th:if="${pram.sturdyFlag} == 1" th:text="Yes">Sturdy Flag</span>
+                    <span th:unless="${pram.sturdyFlag} =='" th:text="No">Sturdy Flag</span>
+    </li>
+
+    <li>Is compact: <span th:if="${pram.compactFlag} == 1" th:text="Yes">Compact Flag</span>
+                    <span th:unless="${pram.compactFlag} == 1" th:text="No">Compact Flag</span>
+    </li>
+
+    <li>Is comfortable: <span th:if="${pram.comfortFlag} == 1" th:text="Yes">Comfort Flag</span>
+                     <span th:unless="${pram.comfortFlag} == 1" th:text="No">Comfort Flag</span>
+    </li>
+
+    <li>Can be used on all terrain: <span th:if="${pram.multiTerrainFlag} == 1" th:text="Yes">Multi Terrain Flag</span>
+                                    <span th:unless="${pram.multiTerrainFlag} == 1" th:text="No">Multi Terrain Flag</span>
+    </li>
+
+    <li>Adjustable Handle Available: <span th:if="${pram.adjustableHandleFlag} == 1" th:text="Yes">Adjustable Handle Flag</span>
+                                    <span th:unless="${pram.adjustableHandleFlag} == 1" th:text="No">Adjustable Handle Flag</span>
+    </li>
+
+    <li>Large Pram Basket Available: <span th:if="${pram.largePramBasketFlag} == 1" th:text="Yes">Large Pram Basket Flag</span>
+                                     <span th:unless="${pram.largePramBasketFlag} == 1" th:text="No">Large Pram Basket Flag</span>
+    </li>
+</ul>
+</body>
+</html>
