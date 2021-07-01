@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
-@Table(name = "vendorpramtable", schema = "babyitemswebsite", catalog = "")
+@Table(name = "vendorpramtable", schema = "prams", catalog = "")
 @IdClass(VendorpramtableEntityPK.class)
 public class VendorpramtableEntity {
     private Integer vendorId;
