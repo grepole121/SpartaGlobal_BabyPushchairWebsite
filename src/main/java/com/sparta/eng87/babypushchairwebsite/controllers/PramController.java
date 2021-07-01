@@ -1,5 +1,6 @@
 package com.sparta.eng87.babypushchairwebsite.controllers;
 
+import com.sparta.eng87.babypushchairwebsite.services.PramService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class PramController {
+
+    private PramService pramService;
 
     @GetMapping("/")
     public String getIndex() {
@@ -32,7 +35,7 @@ public class PramController {
 
     @GetMapping("/productPage/{id}")
     public String getProduct(@PathVariable("id") Integer id, Model model) {
-        model.addAttribute("product", /* find product by id from service*/);
+        model.addAttribute("product", pramService.findPramById(id));
         return "productpage/{id}";
     }
 
@@ -42,12 +45,13 @@ public class PramController {
                            @RequestParam(name = "travel") String travel,
                            @RequestParam(name = "budget") String budget,
                            @RequestParam(name = "infants") String infants,
-                           @RequestParam(name = "accessories") String accessories,
-                           @RequestParam(name = "focalPoints") String focalPoints,
+                           @RequestParam(name = "accessories") String[] accessories,
+                           @RequestParam(name = "focalPoints") String[] focalPoints,
                            @RequestParam(name = "intTravel") String intTravel,
                            @RequestParam(name = "activity") String activity,
                            Model model) {
-        model.addAttribute("prams", /* get prams that meet the criteria */);
+
+        model.addAttribute("prams", pramService.findPramsThatMeetCriteria(location, storage, travel, budget, infants, accessories, focalPoints, intTravel, activity));
         return "/results";
     }
 
