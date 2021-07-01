@@ -70,18 +70,25 @@ public class PramService {
             switch (focalPoint) {
                 case "Use from birth":
                     AgeFromMonths = 0;
+                    break;
                 case "Adaptable over child's growth":
                     AgeToMonths = 1000000;
+                    break;
                 case "Comfort":
                     ComfortFlag = 1;
+                    break;
                 case "Sturdiness / Durability":
                     SturdyFlag = 1;
+                    break;
                 case "Ease of setup":
                     EaseOfSetup = 1;
+                    break;
                 case "Compact":
                     CompactFlag = 1;
+                    break;
                 case "Capacity":
                     LargePramBasketFlag = 1;
+                    break;
             }
         }
 
