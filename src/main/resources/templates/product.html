@@ -7,7 +7,7 @@
 <body>
 
 <h1 th:text="${pram.productName}">Product Name</h1>
-<img th:src="${pram.image}">
+<img th:src="${pram.image}" width="500px" height="500px">
 <p th:text="${pram.productDescription}"></p>
 <ul>
     <li>Child capacity: <span th:text="${pram.childCapacity}">child capacity</span></li>
@@ -45,7 +45,7 @@
     </li>
 
     <li>Is sturdy: <span th:if="${pram.sturdyFlag} == 1" th:text="Yes">Sturdy Flag</span>
-                    <span th:unless="${pram.sturdyFlag} =='" th:text="No">Sturdy Flag</span>
+                    <span th:unless="${pram.sturdyFlag} == 1" th:text="No">Sturdy Flag</span>
     </li>
 
     <li>Is compact: <span th:if="${pram.compactFlag} == 1" th:text="Yes">Compact Flag</span>

@@ -58,7 +58,7 @@ public class PramController {
     }
 
 
-    @GetMapping("/productPage/{id}")
+    @GetMapping("/product/{id}")
     public String getProduct(@PathVariable("id") Integer id, Model model) {
         model.addAttribute("pram", pramService.findPramById(id));
         return "product";
