@@ -34,6 +34,7 @@ public class PramController {
         return "questionnaire";
     }
 
+
     @GetMapping("/add-pram")
     public String showAddPage(PramEntity pramEntity, Model model){
         model.addAttribute("pram", pramEntity);
@@ -70,6 +71,7 @@ public class PramController {
         model.addAttribute("prams", pramService.findPramsThatMeetCriteria(location, storage, travel, budget, infants, accessories, focalPoints, intTravel, activity));
         return "/results";
     }
+
 
 
 }
