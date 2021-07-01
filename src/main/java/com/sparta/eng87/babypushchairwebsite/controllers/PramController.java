@@ -1,5 +1,6 @@
 package com.sparta.eng87.babypushchairwebsite.controllers;
 
+import com.sparta.eng87.babypushchairwebsite.entities.PramEntity;
 import com.sparta.eng87.babypushchairwebsite.services.PramService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,6 +33,21 @@ public class PramController {
     public String getQuestionnaire() {
         return "questionnaire";
     }
+
+    @GetMapping("/add-pram")
+    public String showAddPage(PramEntity pramEntity, Model model){
+        model.addAttribute("pram", pramEntity);
+        return "addPram";
+    }
+
+    @PostMapping("/add")
+    public String addBook(){
+        PramEntity pramEntity = new PramEntity();
+//        pramEntity.setTheParameters();
+        pramService.savePram(pramEntity);
+        return "redirect:/";
+    }
+
 
     @GetMapping("/productPage/{id}")
     public String getProduct(@PathVariable("id") Integer id, Model model) {
