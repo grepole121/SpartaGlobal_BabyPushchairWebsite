@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.5.2/css/bootstrap.min.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
 </head>
-<body th:align="">
+<body>
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-nav border-bottom box-shadow">
     <h5 class="my-0 mr-md-auto font-weight-normal">Logo</h5>
     <nav class="my-2 my-md-0 mr-md-3">
@@ -18,7 +18,7 @@
 <div class="questionnaire">
     <h1 align="center">Add a Pram</h1>
     <br>
-<form action="/add" method="post">
+<form th:action="@{/add}" method="post">
 
     <label>Pram Name</label>
     <label><input type="text" name="productName"/></label>
@@ -72,12 +72,6 @@
     <input type="radio" name="parasolFlag" value="yes">
     <label>yes</label>
     <input type="radio" name="parasolFlag" value="no">
-    <label>no</label>
-    <br>
-    <label>Rain cover available</label>
-    <input type="radio" name="raincoverFlag" value="yes">
-    <label>yes</label>
-    <input type="radio" name="raincoverFlag" value="no">
     <label>no</label>
     <br>
     <label>Mosquito net available</label>
