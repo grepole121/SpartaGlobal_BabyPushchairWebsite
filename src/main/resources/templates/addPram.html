@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Add Pram</title>
 </head>
-<body>
+<body th:align="">
 <h1>Add a Pram</h1>
 <form action="/add" method="post">
     <label>Pram Name</label>
@@ -23,10 +23,16 @@
     <label><input type="number" min="1" name="childCapacity"></label>
     <br>
     <label>Weight</label>
-    <label><input type="text" name="weight"></label>
+    <label><input type="number" name="weight"></label>
     <br>
-    <label>Folded dimensions</label>
-    <label><input type="text" name="foldedDimensions"></label>
+    <label>Length</label>
+    <label><input type="number" name="length"></label>
+    <br>
+    <label>Width</label>
+    <label><input type="number" name="width"></label>
+    <br>
+    <label>Height</label>
+    <label><input type="number" name="height"></label>
     <br>
     <label>Age from months</label>
     <label><input type="number" min="0" name="ageFromMonths"></label>
@@ -88,7 +94,7 @@
     <label>no</label>
     <br>
     <label>Is sturdy</label>
-    <input type="radio" name="SturdyFlag" value="yes">
+    <input type="radio" name="sturdyFlag" value="yes">
     <label>yes</label>
     <input type="radio" name="sturdyFlag" value="no">
     <label>no</label>
@@ -97,6 +103,12 @@
     <input type="radio" name="compactFlag" value="yes">
     <label>yes</label>
     <input type="radio" name="compactFlag" value="no">
+    <label>no</label>
+    <br>
+    <label>Is comfortable</label>
+    <input type="radio" name="comfortFlag" value="yes">
+    <label>yes</label>
+    <input type="radio" name="comfortFlag" value="no">
     <label>no</label>
     <br>
     <label>Can be used on all terrain</label>
@@ -119,6 +131,12 @@
     <br>
     <label>Cheapest price</label>
     <label><input type="number" name="cheapestPrice"></label>
+    <br>
+    <label>Discontinued</label>
+    <input type="radio" name="discontinuedFlag" value="yes">
+    <label>yes</label>
+    <input type="radio" name="discontinuedFlag" value="no">
+    <label>no</label>
     <br>
     <input type="submit" value="Add pram">
 </form>
