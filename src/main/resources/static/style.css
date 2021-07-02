@@ -167,5 +167,18 @@
     font-size: 125%;
 }
 
+.product{
+    margin: auto;
+    max-width: 900px;
+    background-color: lightskyblue;
+    border-radius: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 125%;
+}
+.product-image-and-description{
+    display: flex;
+}
+
 
 
