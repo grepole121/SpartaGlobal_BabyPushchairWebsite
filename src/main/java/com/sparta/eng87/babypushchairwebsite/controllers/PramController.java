@@ -200,7 +200,4 @@ public class PramController {
         model.addAttribute("prams", pramService.findPramsThatMeetCriteria(location, storage, travel, budget, infants, accessories, focalPoints, intTravel, activity));
         return "results";
     }
-
-
-
 }
