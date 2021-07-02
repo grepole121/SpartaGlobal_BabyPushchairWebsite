@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+
 @Table(name = "associateditemstable", schema = "Prams", catalog = "")
 @IdClass(AssociateditemstableEntityPK.class)
 public class AssociateditemstableEntity {
