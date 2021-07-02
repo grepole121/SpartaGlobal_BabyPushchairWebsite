@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "voucherstable", schema = "babyitemswebsite", catalog = "")
+@Table(name = "voucherstable", schema = "Prams", catalog = "")
 @IdClass(VoucherstableEntityPK.class)
 public class VoucherstableEntity {
 
