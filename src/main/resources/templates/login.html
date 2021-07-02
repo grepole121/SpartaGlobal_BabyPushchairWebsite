@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.5.2/css/bootstrap.min.css}"/>
+  <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
 </head>
 <body>
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-nav border-bottom box-shadow">
@@ -17,10 +19,23 @@
   Invalid Credentials
 </div>
 
-<form th:action="@{/login}" method="post">
-  <label>User Name <input type="text" name="username"/> </label>
-  <label>password <input type="password" name="password"/> </label>
-  <input type="submit" value="Sign in"/>
+<div class="loginform">
+  <main class="form-signin">
+    <form th:action="@{/login}" method="post">
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+      <div class="form-floating">
+        <label for="floatingInput">Username</label>
+        <input type="text" class="form-control" id="floatingInput" name="username">
+
+      </div>
+      <div class="form-floating">
+        <label for="floatingPassword">Password</label>
+        <input type="password" class="form-control" id="floatingPassword">
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit" value="Sign in">Sign in</button>
+    </form>
+  </main>
+</div>
 
 </form>
 </body>
