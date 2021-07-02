@@ -68,5 +68,35 @@
                                      <span th:unless="${pram.largePramBasketFlag} == 1" th:text="No">Large Pram Basket Flag</span>
     </li>
 </ul>
+<br/>
+<label><strong>Your Selected code is:</strong></label>
+<label id="voucherCode"></label>
+<br/> <hr>
+<table>
+    <tr>
+        <th>Product Link</th>
+        <th>Vouchers</th>
+        <th>Voucher Code</th>
+    </tr>
+
+    <tr th:each="vendor,iterStat : ${vendors}">
+        <td> <a th:href="${vendor.websiteUrl}"><button>Go to Vendor</button></a></td>
+        <td>
+            <select onclick="show_code(this.value)">
+                <option value="No Code Available">Select Code...</option>
+                <option th:each="voucher : ${vouchers[iterStat.index]}" th:text="${voucher.voucherDescription}" th:value="${voucher.voucherCode}"/>
+            </select>
+        </td>
+        <td th:id="${iterStat.index}"></td>
+        <script>
+            function show_code(code)
+            {
+                document.getElementById("voucherCode").innerHTML=code;
+            }
+        </script>
+    </tr>
+
+</table>
+
 </body>
 </html>
