@@ -2,6 +2,7 @@ package com.sparta.eng87.babypushchairwebsite.controllers;
 
 import com.sparta.eng87.babypushchairwebsite.entities.PramEntity;
 import com.sparta.eng87.babypushchairwebsite.entities.VendorpramtableEntity;
+import com.sparta.eng87.babypushchairwebsite.entities.VendorstableEntity;
 import com.sparta.eng87.babypushchairwebsite.entities.VoucherstableEntity;
 import com.sparta.eng87.babypushchairwebsite.services.PramService;
 import com.sparta.eng87.babypushchairwebsite.services.VoucherService;
@@ -132,9 +133,11 @@ public class PramController {
         VoucherstableEntity empty=new VoucherstableEntity();
         empty.setVoucherCode("none");
         empty.setVoucherDescription("No Vouchers Available");
+        List<VendorstableEntity> vendorNames= new ArrayList<>();
         noVouchers.add(empty);
         for (VendorpramtableEntity vendor:
                 vendors) {
+            vendorNames.add(voucherService.getVendorByID(vendor.getVendorId()).get(0));
             if(voucherService.getAllVouchersForVendor(vendor.getVendorId())!=null) {
                 vouchers.add(voucherService.getAllVouchersForVendor(vendor.getVendorId()));
             }else{
@@ -142,6 +145,7 @@ public class PramController {
                 vouchers.add(noVouchers);
             }
         }
+        model.addAttribute("vendorNames",vendorNames);
         model.addAttribute("vendors",vendors);
         model.addAttribute("vouchers",vouchers);
         return "product";

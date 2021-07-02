@@ -103,7 +103,7 @@
     </tr>
 
     <tr th:each="vendor,iterStat : ${vendors}">
-        <td> <a th:href="${vendor.websiteUrl}"><button>Go to Vendor</button></a></td>
+        <td><span th:each="vendorNames:${vendorNames[iterStat.index].vendorName}" th:text="${vendorNames}"></span><br/> <a th:href="${vendor.websiteUrl}"><button>Go to Vendor</button></a></td>
         <td>
             <select onclick="show_code(this.value)">
                 <option value="No Code Available">Select Code...</option>
