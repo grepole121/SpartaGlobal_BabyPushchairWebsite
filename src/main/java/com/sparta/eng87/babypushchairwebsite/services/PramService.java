@@ -62,8 +62,8 @@ public class PramService {
             EaseOfSetup = 1;
         }
 
-        int AgeFromMonths = 1000000; // Focal Points BIT
-        int AgeToMonths = 36; // Focal Points BIT
+        int AgeFromMonths = 0; // Focal Points BIT
+        int AgeToMonths = 0; // Focal Points BIT
         int ComfortFlag = 0; // Focal Points BIT
         int SturdyFlag = 0; // Focal Points BIT
         int LargePramBasketFlag = 0; // Focal Points BIT
@@ -72,10 +72,10 @@ public class PramService {
         for (String focalPoint : focalPoints) {
             switch (focalPoint) {
                 case "Use from birth":
-                    AgeFromMonths = 0;
+                    AgeFromMonths = 1;
                     break;
                 case "Adaptable over child's growth":
-                    AgeToMonths = 1000000;
+                    AgeToMonths = 1;
                     break;
                 case "Comfort":
                     ComfortFlag = 1;

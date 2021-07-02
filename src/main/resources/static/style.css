@@ -173,6 +173,20 @@
     max-width: 500px;
 }
 
+.product{
+    margin: auto;
+    max-width: 900px;
+    background-color: lightskyblue;
+    border-radius: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 125%;
+}
+
+.product-image-and-description{
+    display: flex;
+}
+
 .form-signin {
     width: 100%;
     max-width: 330px;

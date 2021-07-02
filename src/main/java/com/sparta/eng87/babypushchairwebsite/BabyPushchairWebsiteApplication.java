@@ -12,7 +12,14 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class BabyPushchairWebsiteApplication {
 
 
-
+    private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+    @Bean
+    public CommandLineRunner demo(UserService userService){
+        return (args) -> {
+           // userService.addUser(new UserEntity("employee", encoder.encode("password"), "ADMIN",1));
+           // userService.addUser(new UserEntity("manish", encoder.encode("password"), "USER",1));
+        };
+    }
     public static void main(String[] args) {
 
 

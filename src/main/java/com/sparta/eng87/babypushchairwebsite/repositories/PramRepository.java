@@ -24,8 +24,8 @@ public interface PramRepository extends JpaRepository<PramEntity, Integer>{
             "AND (p.Mosquitonet_Flag OR NOT ?9) " +
             "AND (p.Parasol_Flag OR NOT ?10) " +
             "AND (p.Changebag_Flag OR NOT ?11) " +
-            "AND (p.Age_From_Months<=?12) " +
-            "AND (p.Age_To_Months>=?13) " +
+            "AND (p.Age_From_Months=0 OR NOT ?12) " +
+            "AND (p.Age_To_Months>=36 OR NOT ?13) " +
             "AND (p.Comfort_Flag OR NOT ?14) " +
             "AND (p.Sturdy_Flag OR NOT ?15) " +
             "AND (p.Ease_Of_Setup OR NOT ?16) " +

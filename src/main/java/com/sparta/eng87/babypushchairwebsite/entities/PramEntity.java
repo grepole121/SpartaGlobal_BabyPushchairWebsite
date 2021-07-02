@@ -38,7 +38,7 @@ public class PramEntity {
     private BigDecimal cheapestPrice;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     @Column(name = "PramID")
     public Integer getPramId() {
         return pramId;
