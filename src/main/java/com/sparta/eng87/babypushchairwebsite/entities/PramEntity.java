@@ -5,8 +5,9 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
-@Table(name = "pramstable", schema = "babyitemswebsite", catalog = "")
+@Table(name = "pramstable", schema = "prams", catalog = "")
 public class PramEntity {
+
     private Integer pramId;
     private String productName;
     private String brandName;
@@ -37,6 +38,7 @@ public class PramEntity {
     private BigDecimal cheapestPrice;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "PramID")
     public Integer getPramId() {
         return pramId;
