@@ -28,8 +28,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/admin/**").authenticated()
-                .anyRequest().permitAll().and().formLogin().loginPage("/login").permitAll().defaultSuccessUrl("/welcome",true)
-                .and().exceptionHandling().accessDeniedPage("/accessdenied");
+                .antMatchers("/add-pram").hasAuthority("ADMIN")
+                .anyRequest().permitAll().and().formLogin().loginPage("/login").permitAll().defaultSuccessUrl("/add-pram",true)
+                .and().exceptionHandling().accessDeniedPage("/");
 
 
 

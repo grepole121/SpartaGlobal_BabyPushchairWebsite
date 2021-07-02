@@ -38,6 +38,11 @@ public class PramController {
         return "contact";
     }
 
+    @GetMapping("/login")
+    public String getLogin() {
+        return "login";
+    }
+
     @GetMapping("/questionnaire")
     public String getQuestionnaire() {
         return "questionnaire";

@@ -9,6 +9,7 @@ public class UserEntity {
     @Id
     @GeneratedValue
     private Integer userId;
+
     private String userName;
     private String userPassword;
     private String userRole;
