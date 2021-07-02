@@ -1,6 +1,7 @@
 package com.sparta.eng87.babypushchairwebsite.services;
 
 import com.sparta.eng87.babypushchairwebsite.entities.VendorpramtableEntity;
+import com.sparta.eng87.babypushchairwebsite.entities.VendorstableEntity;
 import com.sparta.eng87.babypushchairwebsite.entities.VoucherstableEntity;
 import com.sparta.eng87.babypushchairwebsite.repositories.VendorPramRepository;
 import com.sparta.eng87.babypushchairwebsite.repositories.VendorsRepository;
@@ -18,9 +19,10 @@ public class VoucherService {
     private VendorsRepository vendors;
 
     @Autowired
-    public VoucherService(VendorPramRepository vendorPramRepository, VouchersRepository vouchers) {
+    public VoucherService(VendorPramRepository vendorPramRepository, VouchersRepository vouchers,VendorsRepository vendors) {
         this.vendorPramRepository = vendorPramRepository;
         this.vouchers = vouchers;
+        this.vendors=vendors;
     }
 
     public List<VendorpramtableEntity> getAllVendorsOfAPram(int pramID){
@@ -29,6 +31,10 @@ public class VoucherService {
 
     public List<VoucherstableEntity> getAllVouchersForVendor(int vendorID){
        return vouchers.getVouchersByVendorID(vendorID);
+    }
+
+    public List<VendorstableEntity> getVendorByID(int vendorID){
+        return vendors.getVendorsByVendorID(vendorID);
     }
 
 

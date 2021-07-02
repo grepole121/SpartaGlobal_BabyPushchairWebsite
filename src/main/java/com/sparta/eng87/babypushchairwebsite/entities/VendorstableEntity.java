@@ -10,6 +10,7 @@ public class VendorstableEntity {
     private Integer vendorId;
     private String websiteUrl;
     private BigDecimal affiliatePercentage;
+    private String vendorName;
 
     @Id
     @Column(name = "vendorId")
@@ -29,6 +30,16 @@ public class VendorstableEntity {
 
     public void setWebsiteUrl(String websiteUrl) {
         this.websiteUrl = websiteUrl;
+    }
+
+    @Basic
+    @Column(name = "vendorName")
+    public String getVendorName() {
+        return vendorName;
+    }
+
+    public void setVendorName(String vendorName) {
+        this.vendorName = vendorName;
     }
 
     @Basic
