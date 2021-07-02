@@ -12,12 +12,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class BabyPushchairWebsiteApplication {
 
 
+
     public static void main(String[] args) {
 
 
         SpringApplication.run(BabyPushchairWebsiteApplication.class, args);
     }
-
 
 
 }

@@ -18,7 +18,7 @@
 <div class="questionnaire">
     <h1 align="center">Add a Pram</h1>
     <br>
-<form action="/add" method="post">
+<form th:action="@{/add}" method="post">
 
     <label>Pram Name</label>
     <label><input type="text" name="productName"/></label>
@@ -72,12 +72,6 @@
     <input type="radio" name="parasolFlag" value="yes">
     <label>yes</label>
     <input type="radio" name="parasolFlag" value="no">
-    <label>no</label>
-    <br>
-    <label>Rain cover available</label>
-    <input type="radio" name="raincoverFlag" value="yes">
-    <label>yes</label>
-    <input type="radio" name="raincoverFlag" value="no">
     <label>no</label>
     <br>
     <label>Mosquito net available</label>
