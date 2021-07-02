@@ -2,37 +2,14 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title th:text="${pram.productName}">Product</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.5.2/css/bootstrap.min.css}"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+    <title>Product</title>
 </head>
 <body>
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-nav border-bottom box-shadow">
-    <h5 class="my-0 mr-md-auto font-weight-normal">Logo</h5>
-    <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="/">Home</a>
-        <a class="p-2 text-dark" href="/about">About</a>
-        <a class="p-2 text-dark" href="/contact">Contact</a>
-    </nav>
-</div>
 
-<div class="product">
-<h1 th:align="center" th:text="${pram.productName}">Product Name</h1>
-    <br>
-    <div class="product-image-and-description">
-<img th:src="${pram.image}" width="400px" height="400px">
-
-<br>
-<div style="padding-left: 22px">
-<h3>Description</h3>
-
+<h1 th:text="${pram.productName}">Product Name</h1>
+<img th:src="${pram.image}" width="500px" height="500px">
 <p th:text="${pram.productDescription}"></p>
-</div>
-</div>
-    <br>
-    <h3>Details</h3>
-    <ul>
-
+<ul>
     <li>Child capacity: <span th:text="${pram.childCapacity}">child capacity</span></li>
     <li>Weight: <span th:text="${pram.weight}">weight</span></li>
     <li>Width: <span th:text="${pram.width}">Width</span></li>
@@ -120,13 +97,6 @@
     </tr>
 
 </table>
-<br>
-</div>
-<br>
-<footer class="mastfoot mt-auto">
-    <div class="inner">
-        <p>Company Name 2021</p>
-    </div>
-</footer>
+
 </body>
 </html>
