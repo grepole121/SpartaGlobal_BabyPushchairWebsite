@@ -39,7 +39,6 @@ public class PramService {
         int ParasolFlag = 0; // Accessory BIT
         int ChangebagFlag = 0; // Accessory BIT
 
-
         for (String accessory : accessories) {
             switch (accessory) {
                 case "Rain cover":
@@ -55,7 +54,6 @@ public class PramService {
             }
         }
 
-
         int EaseOfSetup = 0; // Where stored? & Focal Points BIT
 
         if (storage.equals("Folded up inside the home")) {
@@ -68,32 +66,26 @@ public class PramService {
         int SturdyFlag = 0; // Focal Points BIT
         int LargePramBasketFlag = 0; // Focal Points BIT
 
-
         for (String focalPoint : focalPoints) {
             switch (focalPoint) {
                 case "Use from birth":
                     AgeFromMonths = 0;
-                    break;
                 case "Adaptable over child's growth":
                     AgeToMonths = 1000000;
-                    break;
                 case "Comfort":
                     ComfortFlag = 1;
-                    break;
                 case "Sturdiness / Durability":
                     SturdyFlag = 1;
-                    break;
                 case "Ease of setup":
                     EaseOfSetup = 1;
-                    break;
                 case "Compact":
                     CompactFlag = 1;
-                    break;
                 case "Capacity":
                     LargePramBasketFlag = 1;
-                    break;
             }
         }
+
+
 
         return pramRepository.findPramsThatMeetCriteria(MultiTerrainFlag, CompactFlag, CarAdapterFlag,
                 budgets[0], budgets[1], infantRange[0], infantRange[1], RaincoverFlag, MosquitonetFlag, ParasolFlag, ChangebagFlag,
@@ -116,10 +108,6 @@ public class PramService {
             case "more than 2":
                 infantsLow = 3;
                 infantsHigh = 1500;
-                break;
-            default:
-                infantsLow = 0;
-                infantsHigh = 1000;
                 break;
         }
         int[] infantRange = new int[]{infantsLow, infantsHigh};
@@ -146,10 +134,6 @@ public class PramService {
                 break;
             case "1500+":
                 budgetLow = 1500;
-                budgetHigh = 1000000000;
-                break;
-            default:
-                budgetLow = 0;
                 budgetHigh = 1000000000;
                 break;
         }
