@@ -1,7 +1,10 @@
 package com.sparta.eng87.babypushchairwebsite.controllers;
 
 import com.sparta.eng87.babypushchairwebsite.entities.PramEntity;
+import com.sparta.eng87.babypushchairwebsite.entities.VendorpramtableEntity;
+import com.sparta.eng87.babypushchairwebsite.entities.VoucherstableEntity;
 import com.sparta.eng87.babypushchairwebsite.services.PramService;
+import com.sparta.eng87.babypushchairwebsite.services.VoucherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,16 +14,20 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 @Controller
 public class PramController {
 
     private PramService pramService;
+    private VoucherService voucherService;
 
     @Autowired
-    public PramController(PramService pramService) {
-        this.pramService = pramService;
+    public PramController(PramService pramService, VoucherService voucherService) {
+                this.pramService = pramService;
+                this.voucherService=voucherService;
     }
 
     @GetMapping("/")
@@ -117,6 +124,24 @@ public class PramController {
     @GetMapping("/product/{id}")
     public String getProduct(@PathVariable("id") Integer id, Model model) {
         model.addAttribute("pram", pramService.findPramById(id));
+        List<VendorpramtableEntity> vendors=voucherService.getAllVendorsOfAPram(id);
+        List<List<VoucherstableEntity>> vouchers=new ArrayList<>();
+        List<VoucherstableEntity> noVouchers=new ArrayList<>();
+        VoucherstableEntity empty=new VoucherstableEntity();
+        empty.setVoucherCode("none");
+        empty.setVoucherDescription("No Vouchers Available");
+        noVouchers.add(empty);
+        for (VendorpramtableEntity vendor:
+                vendors) {
+            if(voucherService.getAllVouchersForVendor(vendor.getVendorId())!=null) {
+                vouchers.add(voucherService.getAllVouchersForVendor(vendor.getVendorId()));
+            }else{
+
+                vouchers.add(noVouchers);
+            }
+        }
+        model.addAttribute("vendors",vendors);
+        model.addAttribute("vouchers",vouchers);
         return "product";
     }
 
