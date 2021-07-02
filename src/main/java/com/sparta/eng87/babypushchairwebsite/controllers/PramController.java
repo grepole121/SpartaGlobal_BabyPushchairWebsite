@@ -65,18 +65,55 @@ public class PramController {
     }
 
     @PostMapping("/results")
-    public String getPrams(@RequestParam(name = "location") String location,
-                           @RequestParam(name = "storage") String storage,
-                           @RequestParam(name = "travel") String travel,
-                           @RequestParam(name = "budget") String budget,
-                           @RequestParam(name = "infants") String infants,
-                           @RequestParam(name = "accessories[]") String[] accessories,
-                           @RequestParam(name = "focalPoints[]") String[] focalPoints,
-                           @RequestParam(name = "intTravel") String intTravel,
-                           @RequestParam(name = "activity") String activity,
+    public String getPrams(@RequestParam(name = "location", required = false) String location,
+                           @RequestParam(name = "storage", required = false) String storage,
+                           @RequestParam(name = "travel", required = false) String travel,
+                           @RequestParam(name = "budget", required = false) String budget,
+                           @RequestParam(name = "infants", required = false) String infants,
+                           @RequestParam(name = "accessories[]", required = false) String[] accessories,
+                           @RequestParam(name = "focalPoints[]", required = false) String[] focalPoints,
+                           @RequestParam(name = "intTravel", required = false) String intTravel,
+                           @RequestParam(name = "activity", required = false) String activity,
                            Model model) {
 
         System.out.println(location + storage + Arrays.toString(accessories));
+
+        if(location == null){
+            location = "Not Provided";
+        }
+
+        if(storage == null){
+            storage = "Not Provided";
+        }
+
+        if(travel == null){
+            travel = "Not Provided";
+        }
+
+        if(budget == null){
+            budget = "Not Provided";
+        }
+
+        if(infants == null){
+            infants = "Not Provided";
+        }
+
+        if(intTravel == null){
+            intTravel = "Not Provided";
+        }
+
+        if(activity == null){
+            activity = "Not Provided";
+        }
+
+        if(accessories == null){
+            accessories = new String[]{"Not Provided"};
+        }
+
+        if(focalPoints == null){
+            focalPoints = new String[]{"Not Provided"};
+        }
+
         model.addAttribute("prams", pramService.findPramsThatMeetCriteria(location, storage, travel, budget, infants, accessories, focalPoints, intTravel, activity));
         return "results";
     }
